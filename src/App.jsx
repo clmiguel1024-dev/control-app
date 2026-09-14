@@ -120,15 +120,43 @@ function PrimaryButton({ children, onClick, disabled }) {
 
 function CaptureCard({ icon: Icon, label, sub, color, onClick }) {
   return (
-    <button type="button" onClick={onClick} className="w-full flex items-center gap-4" style={{ background: COLORS.card, border: `1px solid ${COLORS.border}`, borderRadius: 16, padding: "16px", marginBottom: 12, textAlign: "left", cursor: "pointer" }}>
-      <div style={{ width: 44, height: 44, borderRadius: 12, background: color + "22", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+    <button
+      type="button"
+      onClick={onClick}
+      style={{
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        gap: 14,
+        background: COLORS.card,
+        border: `1px solid ${COLORS.border}`,
+        borderRadius: 16,
+        padding: "16px",
+        marginBottom: 12,
+        textAlign: "left",
+        cursor: "pointer",
+        boxSizing: "border-box"
+      }}
+    >
+      <div
+        style={{
+          width: 44,
+          height: 44,
+          borderRadius: 12,
+          background: color + "22",
+          display: "flex",
+          alignItems: "center",
+          justify: "center",
+          flexShrink: 0,
+        }}
+      >
         <Icon size={21} color={color} />
       </div>
-      <div style={{ flex: 1 }}>
+      <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ color: COLORS.text, fontWeight: 600, fontSize: 15 }}>{label}</div>
         <div style={{ color: COLORS.textFaint, fontSize: 12.5, marginTop: 1 }}>{sub}</div>
       </div>
-      <ChevronRight size={18} color={COLORS.textFaint} />
+      <ChevronRight size={18} color={COLORS.textFaint} style={{ flexShrink: 0 }} />
     </button>
   );
 }

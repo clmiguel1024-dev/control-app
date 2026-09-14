@@ -117,7 +117,6 @@ function PrimaryButton({ children, onClick, disabled }) {
     </button>
   );
 }
-
 function CaptureCard({ icon: Icon, label, sub, color, onClick }) {
   return (
     <button
@@ -146,7 +145,7 @@ function CaptureCard({ icon: Icon, label, sub, color, onClick }) {
           background: color + "22",
           display: "flex",
           alignItems: "center",
-          justify: "center",
+          justifyContent: "center",
           flexShrink: 0,
         }}
       >
@@ -160,7 +159,6 @@ function CaptureCard({ icon: Icon, label, sub, color, onClick }) {
     </button>
   );
 }
-
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState("capturar");
